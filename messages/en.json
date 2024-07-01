@@ -1,5 +1,30 @@
 {
-   "Index" : {
-      "about" : "hello world"
+ 
+   "metadata" : "portfolio",
+
+
+
+   "siteProp" : {
+      "wrong" : "went wrong!"
+   },
+
+
+   "home" : {
+      "about" : "hey there , i`m sadegh"
+   },
+
+   "about" : {
+      "title" : "About"
+   },
+
+   "projects" : {
+      "title" : "projects"
+   },
+
+
+   "localeSwitcher" : {
+      "en" : "EN",
+      "fa" : "FA"
+
    }
 }

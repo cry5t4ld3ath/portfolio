@@ -1,5 +1,26 @@
 {
-   "Index" : {
-      "about" : "salam"
+   "metadata" : "پورتفولیو",
+
+   "siteProp" : {
+      "wrong" : "صفحه رید"
+   },
+
+   "home" : {
+      "about" : "خانه"
+   },
+
+   "about" : {
+      "title" : "درباره"
+   },
+
+   "projects" : {
+      "title" : "پروژهها"
+   },
+
+
+   "localeSwitcher" : {
+      "en" : "EN",
+      "fa" : "FA"
+
    }
 }

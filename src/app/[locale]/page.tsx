@@ -1,6 +1,5 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import style from "./styles.module.css"
 import StarsCanvas from "@/components/particles";
 
 type Props = {
@@ -12,7 +11,7 @@ export default function IndexPage({params: {locale}}: Props) {
 
    unstable_setRequestLocale(locale);
 
-   const t = useTranslations("Index")
+   const t = useTranslations("home")
    
 
    return (
