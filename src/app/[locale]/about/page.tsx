@@ -1,20 +1,9 @@
 import { useTranslations } from "next-intl"
-import { getLangDir } from "rtl-detect";
 
 
-
-type Props = {
-   params : {locale: string}
-}
-
-
-
-export default function AboutPage({
-   params: {locale}
-} : Props) {
+export default function AboutPage() {
 
    const t = useTranslations('about');
-   const direction = getLangDir(locale);
 
    return (
       <div className="h-[200vh] bg-green-950 text-black text-[5rem]">
