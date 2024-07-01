@@ -1,6 +1,6 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-
+import style from "./styles.module.css"
 
 type Props = {
    params: {locale: string};
@@ -16,7 +16,7 @@ export default function IndexPage({params: {locale}}: Props) {
 
    return (
       <div className="">
-         <h1 className="tex text-[5rem] text-black">{t("about")}</h1>
+         <h1 className={style.tex}>{t("about")}</h1>
       </div>
    )
 }
