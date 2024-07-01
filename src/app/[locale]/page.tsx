@@ -16,7 +16,7 @@ export default function IndexPage({params: {locale}}: Props) {
 
    return (
       <div className="">
-         <h1 className="text-[5rem] text-black">{t("about")}</h1>
+         <h1 className="tex text-[5rem] text-black">{t("about")}</h1>
       </div>
    )
 }

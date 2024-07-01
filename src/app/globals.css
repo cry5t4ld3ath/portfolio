@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+:root {
+   background-color: black;
+}
+
+
+.tex {
+   font-size: 5rem;
+   color: aliceblue;
+}
