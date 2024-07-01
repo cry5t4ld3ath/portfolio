@@ -11,9 +11,12 @@ export default function IndexPage({params: {locale}}: Props) {
 
    unstable_setRequestLocale(locale);
 
+   const t = useTranslations("Index")
+   
+
    return (
       <div className="">
-         <h1 className="text-[5rem] text-black"> hello</h1>
+         <h1 className="text-[5rem] text-black">{t("about")}</h1>
       </div>
    )
 }
