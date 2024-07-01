@@ -13,7 +13,7 @@ export default function IndexPage({params: {locale}}: Props) {
 
    return (
       <div className="min-h-screen bg-black w-full">
-
+         <h1 className="text-[5rem] text-black"> hello</h1>
       </div>
    )
 }
