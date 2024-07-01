@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
+
 
 const config: Config = {
   content: [
@@ -9,8 +11,34 @@ const config: Config = {
   theme: {
     extend: {
 
+      screens : {
+        'mobile' : {"max" : "1023px"},
+        'desktop' : "1024px",
+      },
+
+
+      fontFamily: {
+        custom: ["evance"]
+      },
+
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(
+      function ({ addVariant }) {
+        addVariant("glow", ".glow-capture .glow-overlay &")
+      },
+      {
+        theme: {
+          extend: {
+            colors: {
+              // https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+              glow: "color-mix(in srgb, var(--glow-color) calc(<alpha-value> * 100%), transparent)",
+            },
+          },
+        },
+      }
+    ),
+  ],
 };
 export default config;
