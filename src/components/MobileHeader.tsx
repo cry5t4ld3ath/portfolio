@@ -25,7 +25,7 @@ export default function MobileHeader () {
       <div className="desktop:hidden fixed top-0 right-0">
 
          <div>
-               <div onClick={handleNav} className="w-fit h-fit fixed top-5 right-5 z-50">
+               <div onClick={handleNav} className="w-fit h-fit fixed top-5 right-8 z-50">
                   <button className="w-fit h-fit relative grid place-items-center">
                      <span className={`w-[35px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "rotate-45 bg-red-800" : "-translate-y-1.5"} `} />
                      <span className={`w-[25px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "opacity-0" : ""}`} />
@@ -34,7 +34,7 @@ export default function MobileHeader () {
                </div>
 
             <div className={`
-               fixed top-0 right-0 w-full min-h-screen backdrop-blur-[5px] bg-red-950/20 transition-all duration-500 
+               fixed top-0 right-0 w-full min-h-screen backdrop-blur-sm bg-red-950/20 transition-all duration-500 
                ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
                >
                   <div className="min-h-screen flex flex-col justify-center items-center font-[evance] text-[2rem]">
