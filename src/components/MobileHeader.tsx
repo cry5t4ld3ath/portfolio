@@ -29,7 +29,11 @@ export default function MobileHeader () {
             <div onClick={handleNav} className="w-fit h-fit fixed top-8 right-8 z-50">
                <button className="w-fit h-fit relative grid place-items-center">
                   <span className={`w-[25px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "rotate-45 bg-red-800 w-[35px]" : "-translate-y-1.5"} `} />
+<<<<<<< HEAD
                   <span className={`w-[35px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "scale-0" : ""}`} />
+=======
+                  <span className={`w-[35px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "w-0" : ""}`} />
+>>>>>>> origin
                   <span className={`w-[25px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "-rotate-45 bg-red-800 w-[35px]" : "translate-y-1.5 w-[15px]"}`} />
                </button>
             </div>
