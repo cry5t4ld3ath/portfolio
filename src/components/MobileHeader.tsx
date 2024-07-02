@@ -16,6 +16,12 @@ export default function MobileHeader () {
 
    const handleNav = () => {
       setMenuOpen(!menuOpen)
+
+      if (!menuOpen) {
+         document.body.classList.add("overflow-hidden");
+      } else {
+         document.body.classList.remove("overflow-hidden");
+      }
    }
 
    const locale = useLocale();
