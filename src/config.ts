@@ -11,6 +11,6 @@ export const pathnames: Pathnames<typeof locales> = {
     fa: '/درباره'
   },
   
-};
+}satisfies Pathnames<typeof locales>;
 
 export const localePrefix: LocalePrefix<typeof locales> = 'always';
