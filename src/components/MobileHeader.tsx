@@ -3,17 +3,18 @@
 import Image from "next/image";
 import { useState } from "react";
 import NavigationLink from "./NavigationLink";
-import { useLocale, useTranslations } from "next-intl";
-import LocaleLink from "./LocaleSwitcherLinks";
+import { IntlProvider, useLocale, useTranslations } from "next-intl";
 import { locales } from "@/config";
 import { unstable_setRequestLocale } from "next-intl/server";
+import LocaleSwitcher from "./MobileNavigation";
+import { AppProps } from "next/app";
 
 
 
 
 
 
-export default function MobileHeader() {
+const MobileHeader =({ Component , pageProps }: AppProps) => {
 
    const [menuOpen, setMenuOpen] = useState(false)
 
@@ -22,8 +23,6 @@ export default function MobileHeader() {
       setMenuOpen(!menuOpen)
    }
 
-   // const localee = useLocale();
-   // const t = useTranslations('localeSwitcher')
 
    return (
       <div className="desktop:hidden fixed top-0 right-0">
@@ -59,15 +58,22 @@ export default function MobileHeader() {
                      </NavigationLink>
                   </div>
 
-                  {/* <div className="fixed bottom-3 right-10 border-red-900 border rounded-2xl">
-                     <LocaleLink defaultValue={locale}>
-                        {locales.map((cur) => (
-                           <button key={cur} value={cur} className={`mx-4 my-2 ${cur === localee ? ' text-white' : 'text-red-600'}`}>
-                           {t(cur)}
-                           </button>
-                        ))}
-                     </LocaleLink>
-                  </div> */}
+                  <div className="fixed bottom-3 right-10 border-red-900 border rounded-2xl">
+                  <IntlProvider
+                     messages={{
+                     // Define your translations here if necessary
+                     localeSwitcher: {
+                        en: 'English',
+                        fa: 'Farsi',
+                        // Add more locales as needed
+                     },
+                     }}
+                     locale={pageProps.locale || locales[0]} // Default locale
+                  >
+                     <LocaleSwitcher params={{ locale: pageProps.locale }} />
+                     <Component {...pageProps} />
+                  </IntlProvider>
+                  </div>
                   
                </div>
             </div>
