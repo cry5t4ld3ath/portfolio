@@ -8,5 +8,5 @@ const nextConfig = {
    basePath: "/por",
    assetPrefix: "/por/"
 };
-
-module.exports= withNextIntl(nextConfig);
+ 
+export default withNextIntl(nextConfig);
