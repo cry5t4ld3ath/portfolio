@@ -10,6 +10,7 @@ type Props = {
 export default function IndexPage({params: {locale}}: Props) {
 
    unstable_setRequestLocale(locale)
+   
    const t = useTranslations("home")
    
 
