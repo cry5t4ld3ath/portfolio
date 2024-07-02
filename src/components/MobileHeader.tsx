@@ -33,7 +33,7 @@ export default function MobileHeader() {
                <div onClick={handleNav}>
                   <Image 
                   className="fixed top-5 right-5" 
-                  src="/navbar.svg" 
+                  src="../../public/navbar.svg" 
                   alt="navbar" 
                   width={32} height={32}/>
                </div>
@@ -42,7 +42,7 @@ export default function MobileHeader() {
             <div className={`fixed top-0 right-0 w-full min-h-screen backdrop-blur-[2px] bg-red-950/20 transition-all duration-500 ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
                <div onClick={handleNav} className="h-screen">
                   <Image 
-                  src="/navclos.svg" 
+                  src="../../public/navclos.svg" 
                   width={32} height={32} 
                   alt="close" 
                   className="mix-blend-difference absolute right-5 top-[0.8rem]"/>
