@@ -25,27 +25,18 @@ export default function MobileHeader () {
       <div className="desktop:hidden fixed top-0 right-0">
 
          <div>
-            {!menuOpen && (
-               <div onClick={handleNav}>
-                  <Image 
-                  className="fixed top-5 right-5" 
-                  src="./navbar.svg" 
-                  alt="navbar" 
-                  width={32} height={32}/>
+               <div onClick={handleNav} className="w-fit h-fit fixed top-5 right-5 z-50">
+                  <button className="w-fit h-fit relative grid place-items-center">
+                     <span className={`w-[35px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "rotate-45 bg-red-800" : "-translate-y-1.5"} `} />
+                     <span className={`w-[25px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "opacity-0" : ""}`} />
+                     <span className={`h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out ${menuOpen ? "-rotate-45 bg-red-800 w-[35px]" : "translate-y-1.5 w-[15px]"}`} />
+                  </button>
                </div>
-            )}
 
             <div className={`
-               fixed top-0 right-0 w-full min-h-screen backdrop-blur-[2px] bg-red-950/20 transition-all duration-500 
+               fixed top-0 right-0 w-full min-h-screen backdrop-blur-[5px] bg-red-950/20 transition-all duration-500 
                ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
                >
-               <div onClick={handleNav} className="min-h-screen">
-                  <Image 
-                  src="./navclos.svg" 
-                  width={32} height={32} 
-                  alt="close" 
-                  className=" absolute right-5 top-[0.8rem]"/>
-
                   <div className="min-h-screen flex flex-col justify-center items-center font-[evance] text-[2rem]">
                      <NavigationLink href='/'>
                            Home
@@ -71,7 +62,6 @@ export default function MobileHeader () {
                      </LocaleLink>
                   </div>
                   
-               </div>
             </div>
 
          </div>
