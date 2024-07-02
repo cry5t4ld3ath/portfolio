@@ -7,6 +7,7 @@ type Props = {
    params : {locale: string}
 }
 
+export const dynamic = "force-dynamic";
 
 
 export default function AboutPage({
@@ -24,3 +25,4 @@ export default function AboutPage({
       </div>
    )
 }
+
