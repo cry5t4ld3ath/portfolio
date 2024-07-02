@@ -35,8 +35,11 @@ export default function MobileHeader () {
                </div>
             )}
 
-            <div className={`fixed top-0 right-0 w-full min-h-screen backdrop-blur-[2px] bg-red-950/20 transition-all duration-500 ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-               <div onClick={handleNav} className="h-screen">
+            <div className={`
+               fixed top-0 right-0 w-full min-h-screen backdrop-blur-[2px] bg-red-950/20 transition-all duration-500 
+               ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+               >
+               <div onClick={handleNav} className="min-h-screen">
                   <Image 
                   src="/navclos.svg" 
                   width={32} height={32} 
