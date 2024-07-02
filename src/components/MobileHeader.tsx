@@ -3,18 +3,15 @@
 import Image from "next/image";
 import { useState } from "react";
 import NavigationLink from "./NavigationLink";
-import { IntlProvider, useLocale, useTranslations } from "next-intl";
-import { locales } from "@/config";
-import { unstable_setRequestLocale } from "next-intl/server";
+import {  useLocale} from "next-intl";
 import LocaleSwitcher from "./MobileNavigation";
-import { AppProps } from "next/app";
 
 
 
 
 
 
-const MobileHeader =({ Component , pageProps }: AppProps) => {
+const MobileHeader =() => {
 
    const [menuOpen, setMenuOpen] = useState(false)
 
@@ -23,6 +20,7 @@ const MobileHeader =({ Component , pageProps }: AppProps) => {
       setMenuOpen(!menuOpen)
    }
 
+   const locale = useLocale();
 
    return (
       <div className="desktop:hidden fixed top-0 right-0">
@@ -59,20 +57,7 @@ const MobileHeader =({ Component , pageProps }: AppProps) => {
                   </div>
 
                   <div className="fixed bottom-3 right-10 border-red-900 border rounded-2xl">
-                  <IntlProvider
-                     messages={{
-                     // Define your translations here if necessary
-                     localeSwitcher: {
-                        en: 'English',
-                        fa: 'Farsi',
-                        // Add more locales as needed
-                     },
-                     }}
-                     locale={pageProps.locale || locales[0]} // Default locale
-                  >
-                     <LocaleSwitcher params={{ locale: pageProps.locale }} />
-                     <Component {...pageProps} />
-                  </IntlProvider>
+                     <LocaleSwitcher params={{ locale }}/>
                   </div>
                   
                </div>
@@ -82,3 +67,6 @@ const MobileHeader =({ Component , pageProps }: AppProps) => {
       </div>
    )
 }
+
+
+export default MobileHeader;
