@@ -63,7 +63,7 @@ export default function MobileHeader () {
                      </NavigationLink>
                </div>
 
-               <div className="absolute top-5 left-5">
+               <div className="fixed top-5 left-5">
                   <LocaleLink defaultValue={locale}>
                      {locales.map((cur) => (
                         <button 
