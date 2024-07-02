@@ -5,6 +5,16 @@ export const locales = ['en', 'fa'] as const;
 
 export const pathnames: Pathnames<typeof locales> = {
   '/': '/',
+
+  '/about': {
+    en: '/about',
+    fa: '/about'
+  },
+
+  '/projects' : {
+    en: "/projects",
+    fa: "/projects"
+  }
   
 }satisfies Pathnames<typeof locales>;
 
