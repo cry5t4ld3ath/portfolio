@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl"
 
 
-export default async function AboutPage() {
+export default function AboutPage() {
 
-   const t = await useTranslations('about');
+   const t = useTranslations('about');
 
    return (
       <div className="min-h-screen bg-slate-900">
