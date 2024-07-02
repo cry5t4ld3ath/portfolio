@@ -46,7 +46,7 @@ export default function MobileHeader () {
          </div>
 
          <div className={`
-         fixed top-0 right-0 w-full min-h-screen backdrop-blur-lg bg-red-950/20 transition-all duration-500 
+         fixed top-0 right-0 w-full min-h-screen backdrop-blur-2xl bg-red-950/20 transition-all duration-500 
          ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
          >
             <div onClick={handleNav} className="w-full min-h-screen relative">
