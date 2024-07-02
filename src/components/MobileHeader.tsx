@@ -29,7 +29,7 @@ export default function MobileHeader () {
                <div onClick={handleNav}>
                   <Image 
                   className="fixed top-5 right-5" 
-                  src="/navbar.svg" 
+                  src="./navbar.svg" 
                   alt="navbar" 
                   width={32} height={32}/>
                </div>
@@ -41,24 +41,24 @@ export default function MobileHeader () {
                >
                <div onClick={handleNav} className="min-h-screen">
                   <Image 
-                  src="/navclos.svg" 
+                  src="./navclos.svg" 
                   width={32} height={32} 
                   alt="close" 
-                  className="mix-blend-difference absolute right-5 top-[0.8rem]"/>
+                  className=" absolute right-5 top-[0.8rem]"/>
 
-                  <div className="w-full h-full flex flex-col justify-center items-center font-[evance] text-[2rem]">
-                  <NavigationLink href='/'>
-                        Home
-                     </NavigationLink>
-                     <NavigationLink href='/about'>
-                        About
-                     </NavigationLink>
-                     <NavigationLink href='/projects'>
-                        Projects
-                     </NavigationLink>
+                  <div className="min-h-screen flex flex-col justify-center items-center font-[evance] text-[2rem]">
+                     <NavigationLink href='/'>
+                           Home
+                        </NavigationLink>
+                        <NavigationLink href='/about'>
+                           About
+                        </NavigationLink>
+                        <NavigationLink href='/projects'>
+                           Projects
+                        </NavigationLink>
                   </div>
 
-                  <div className="fixed bottom-3 right-10 border-red-900 border rounded-2xl">
+                  <div className="fixed bottom-5 right-10 border-red-900 border rounded-2xl">
                      <LocaleLink defaultValue={locale}>
                         {locales.map((cur) => (
                            <button 
