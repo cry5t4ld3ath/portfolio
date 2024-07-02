@@ -58,7 +58,10 @@ export default function MobileHeader () {
                   <div className="fixed bottom-3 right-10 border-red-900 border rounded-2xl">
                      <LocaleLink defaultValue={locale}>
                         {locales.map((cur) => (
-                           <button key={cur} value={cur} className={`mx-4 my-2 ${cur === locale ? ' text-white' : 'text-red-600'}`}>
+                           <button 
+                           key={cur} 
+                           value={cur} 
+                           className={`mx-4 my-2 ${cur === locale ? ' text-white' : 'text-red-600'}`}>
                            {t(cur)}
                            </button>
                         ))}

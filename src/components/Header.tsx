@@ -1,3 +1,4 @@
+import LocaleSwitcher from "./LocaleSwitcher";
 import NavigationLink from "./NavigationLink";
 
 
@@ -24,6 +25,7 @@ export default function Header() {
                   </div>
                </div>
                <div className="fixed bottom-0 right-5">
+                  <LocaleSwitcher />
                </div>
             </div>
          </nav>
