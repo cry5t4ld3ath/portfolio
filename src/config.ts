@@ -8,12 +8,12 @@ export const pathnames: Pathnames<typeof locales> = {
 
   '/about': {
     en: '/about',
-    fa: '/درباره'
+    fa: '/about'
   },
 
   '/projects' : {
     en: "/projects",
-    fa: "/پروژه"
+    fa: "/projects"
   }
   
 }satisfies Pathnames<typeof locales>;
