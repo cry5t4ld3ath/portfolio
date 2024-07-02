@@ -15,7 +15,7 @@ export default function IndexPage({params: {locale}}: Props) {
    
 
    return (
-      <div className="min-h-screen w-full">
+      <div className="h-[200dvh] w-full">
          <StarsCanvas />
          <h1 className="text-[5rem] text-white">{t("about")}</h1>
       </div>
