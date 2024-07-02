@@ -62,7 +62,7 @@ export default function MobileHeader({params: {locale}}: Props) {
                      </NavigationLink>
                   </div>
 
-                  <div className="fixed bottom-3 right-10 border-red-900 border rounded-2xl">
+                  {/* <div className="fixed bottom-3 right-10 border-red-900 border rounded-2xl">
                      <LocaleLink defaultValue={locale}>
                         {locales.map((cur) => (
                            <button key={cur} value={cur} className={`mx-4 my-2 ${cur === localee ? ' text-white' : 'text-red-600'}`}>
@@ -70,7 +70,7 @@ export default function MobileHeader({params: {locale}}: Props) {
                            </button>
                         ))}
                      </LocaleLink>
-                  </div>
+                  </div> */}
                   
                </div>
             </div>
