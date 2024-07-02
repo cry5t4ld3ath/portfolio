@@ -39,7 +39,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Header />
-          <MobileHeader params={{locale}}/>
+          <MobileHeader />
         </NextIntlClientProvider>
       </body>
     </html>
