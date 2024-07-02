@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import NavigationLink from "./NavigationLink";
 import {  useLocale} from "next-intl";
-import LocaleSwitcher from "./MobileNavigation";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 
 
