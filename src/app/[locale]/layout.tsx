@@ -32,7 +32,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body className="grid desktop:grid-cols-[1.7fr_0.4fr] mobile:grid-cols-1 mobile:grid-rows-1">
         <NextIntlClientProvider messages={messages}>
           <main>
             {children}

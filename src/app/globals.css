@@ -7,3 +7,19 @@
 :root {
    background-color: black;
 }
+
+@font-face {
+   font-family: "evance";
+   src: url(../../public/fonts/evanescent.ttf);
+ }
+ 
+ 
+ ::-webkit-scrollbar {
+   background-color: black;
+   width: 6px;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+   background-color: rgb(56, 0, 0);
+   border-radius: 20px;
+ }
