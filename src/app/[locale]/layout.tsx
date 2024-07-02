@@ -6,6 +6,7 @@ import {
 import {ReactNode} from 'react';
 import {locales} from '@/config';
 import Header from '@/components/Header';
+import MobileHeader from '@/components/MobileHeader';
 
 
 type Props = {
@@ -38,6 +39,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Header />
+          <MobileHeader params={{locale}}/>
         </NextIntlClientProvider>
       </body>
     </html>
