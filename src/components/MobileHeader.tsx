@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image";
 import { useState } from "react";
 import NavigationLink from "./NavigationLink";
 import { useLocale, useTranslations } from "next-intl";
@@ -11,26 +10,25 @@ import { locales } from "@/config";
 
 export default function MobileHeader () {
 
-   const [menuOpen, setMenuOpen] = useState(false)
+   const [menuOpen, setMenuOpen] = useState(false);
 
 
    const handleNav = () => {
-      setMenuOpen(!menuOpen)
+      setMenuOpen(!menuOpen);
 
       if (!menuOpen) {
          document.body.classList.add("overflow-hidden");
       } else {
          document.body.classList.remove("overflow-hidden");
       }
-   }
+   };
 
    const locale = useLocale();
-   const t = useTranslations('localeSwitcher')
+   const t = useTranslations('localeSwitcher');
 
    return (
       <div className="desktop:hidden">
          <div onClick={handleNav} className="w-fit h-fit fixed top-8 right-8 z-50">
-
             <button className="w-fit h-fit relative grid place-items-center">
                <span className={`
                   w-[25px] h-[4px] absolute rounded-full bg-white transform duration-500 ease-in-out 
@@ -45,16 +43,15 @@ export default function MobileHeader () {
                   ${menuOpen ? "-rotate-45 bg-red-800 w-[35px]" : "translate-y-1.5"}`} 
                   />
             </button>
-
          </div>
 
          <div className={`
          fixed top-0 right-0 w-full min-h-screen backdrop-blur-sm bg-red-950/20 transition-all duration-500 
          ${menuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
          >
-            <div onClick={handleNav}>
+            <div onClick={handleNav} className="w-full min-h-screen relative">
 
-               <div className="min-h-screen flex flex-col justify-center items-center font-[evance] text-[2rem]">
+               <div className="h-screen flex flex-col justify-center items-center font-[evance] text-[2rem]">
                   <NavigationLink href='/'>
                         Home
                      </NavigationLink>
@@ -66,7 +63,7 @@ export default function MobileHeader () {
                      </NavigationLink>
                </div>
 
-               <div className="fixed bottom-5 right-10 border-red-900 border rounded-2xl">
+               <div className="absolute bottom-5 right-5 border">
                   <LocaleLink defaultValue={locale}>
                      {locales.map((cur) => (
                         <button 
@@ -81,5 +78,5 @@ export default function MobileHeader () {
             </div>
          </div>
       </div>
-   )
-}
+   );
+};
