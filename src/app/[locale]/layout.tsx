@@ -1,11 +1,11 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {
   getMessages,
-  getTranslations,
   unstable_setRequestLocale
 } from 'next-intl/server';
 import {ReactNode} from 'react';
 import {locales} from '@/config';
+import Header from '@/components/Header';
 
 
 type Props = {
@@ -34,7 +34,10 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <main>
+            {children}
+          </main>
+          <Header />
         </NextIntlClientProvider>
       </body>
     </html>
