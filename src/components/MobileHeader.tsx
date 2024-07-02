@@ -22,7 +22,7 @@ export default function MobileHeader () {
    const t = useTranslations('localeSwitcher')
 
    return (
-      <div className="desktop:hidden fixed top-0 right-0">
+      <div className="desktop:hidden fixed top-0 right-0 overflow-hidden">
 
          <div>
             
