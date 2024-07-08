@@ -7,6 +7,7 @@ import {ReactNode} from 'react';
 import {locales} from '@/config';
 import Header from '@/components/Header';
 import MobileHeader from '@/components/MobileHeader';
+import Loading from '@/components/Loading';
 
 
 type Props = {
@@ -35,11 +36,13 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className="grid desktop:grid-cols-[1.7fr_0.4fr] mobile:grid-cols-1 mobile:grid-rows-1">
         <NextIntlClientProvider messages={messages}>
-          <main>
-            {children}
-          </main>
-          <Header />
-          <MobileHeader />
+          <Loading>
+            <main>
+              {children}
+            </main>
+            <Header />
+            <MobileHeader />
+          </Loading>
         </NextIntlClientProvider>
       </body>
     </html>
