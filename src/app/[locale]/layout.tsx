@@ -34,19 +34,21 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <Loading>
-      <body className="grid desktop:grid-cols-[1.7fr_0.4fr] mobile:grid-cols-1 mobile:grid-rows-1">
+      <body>
         <NextIntlClientProvider messages={messages}>
-          
+          <Loading>
             <main>
               {children}
             </main>
             <Header />
             <MobileHeader />
-          
+          </Loading>
         </NextIntlClientProvider>
       </body>
-      </Loading>
     </html>
   );
 }
+
+
+
+// className="grid desktop:grid-cols-[1.7fr_0.4fr] mobile:grid-cols-1 mobile:grid-rows-1"
