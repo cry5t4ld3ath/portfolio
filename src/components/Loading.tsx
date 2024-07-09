@@ -10,6 +10,7 @@ interface LoadingProps {
 
 const Loading: React.FC<LoadingProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState<boolean | null>(true);
+  const [showChildren, setShowChildren] = useState(false);
   const topRef = useRef(null);
   const bottomRef = useRef(null);
 
@@ -17,12 +18,15 @@ const Loading: React.FC<LoadingProps> = ({ children }) => {
     const hasVisited = sessionStorage.getItem('hasVisited');
 
     if (!hasVisited) {
-      // Entrance animation
+      
       gsap.set([topRef.current, bottomRef.current], { x: "-100%" });
       gsap.to(topRef.current, { duration: 1, x: 0, ease: "power3.out" });
       gsap.to(bottomRef.current, { duration: 1, x: 0, ease: "power3.out", delay: 0.2 });
 
-      // Exit animation after 4 seconds
+      setTimeout(() => {
+        setShowChildren(true);
+      }, 3000);
+
       setTimeout(() => {
         const tl = gsap.timeline({
           onComplete: () => {
@@ -45,12 +49,14 @@ const Loading: React.FC<LoadingProps> = ({ children }) => {
       }, 4000);
     } else {
       setIsLoading(false);
+      setShowChildren(true);
     }
   }, []);
 
   return (
     <React.Fragment>
-      {isLoading ? (
+      {showChildren && children}
+      {isLoading && (
         <>
           <div
             ref={topRef}
@@ -61,8 +67,6 @@ const Loading: React.FC<LoadingProps> = ({ children }) => {
             className="w-full h-[50vh] fixed bottom-0 bg-red-950 z-50"
           />
         </>
-      ) : (
-        children
       )}
     </React.Fragment>
   );
