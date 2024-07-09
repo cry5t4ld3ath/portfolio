@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 
@@ -23,11 +24,12 @@ const Loading = ({ children }: LoadingProps) => {
       setTimeout(() => {
          setIsLoading(false);
          sessionStorage.setItem('hasVisited', 'true');
-      }, 4000);
+      }, 2000);
       
       } else {
       setIsLoading(false);
       };
+
 
   },[]);
 
@@ -35,6 +37,7 @@ const Loading = ({ children }: LoadingProps) => {
   return (
     <>
       {isLoading ? (
+        
         <div className="min-h-screen bg-red-950 flex items-center justify-center">
           <span className="text-white">Loading...</span>
         </div>
