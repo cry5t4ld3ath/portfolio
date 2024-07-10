@@ -8,8 +8,8 @@ export default function Header() {
 
 
    return (
-      <header className="min-h-screen w-[10vw] mobile:hidden z-50">
-         <nav className="min-h-screen w-full fixed top-0 right-0 bottom-0 overflow-hidden">
+      <header className="min-h-screen desktop:fixed top-0 right-0 w-[10vw] mobile:hidden z-50">
+         <nav className="h-full w-full overflow-hidden">
             <div>
                <div className="min-h-screen w-full px-5 text-[3rem] flex justify-end">
                   <div className="space-y-20 flex flex-col items-end justify-center font-[evance]">
