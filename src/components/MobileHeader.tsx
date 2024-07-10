@@ -52,15 +52,13 @@ export default function MobileHeader () {
             <div onClick={handleNav} className="w-full min-h-screen relative">
 
                <div className="h-screen flex flex-col justify-center items-center font-[evance] text-[2rem]">
-                  <NavigationLink href='/'>
-                        Home
+                  {['home' , 'about' , 'projects'].map(item => (
+                     <NavigationLink 
+                     key={item}
+                     href={item === 'home' ? '/' : `/${item}`}>
+                        {item}
                      </NavigationLink>
-                     <NavigationLink href='/about'>
-                        About
-                     </NavigationLink>
-                     <NavigationLink href='/projects'>
-                        Projects
-                     </NavigationLink>
+                  ))}
                </div>
 
                <div className="fixed top-2 left-2">
@@ -69,7 +67,7 @@ export default function MobileHeader () {
                         <button 
                         key={cur} 
                         value={cur} 
-                        className={`mx-4 my-2 ${cur === locale ? ' text-white' : 'text-red-600'}`}>
+                        className={`mx-4 my-2 ${cur === locale ? ' text-red-600' : 'text-white'}`}>
                         {t(cur)}
                         </button>
                      ))}
