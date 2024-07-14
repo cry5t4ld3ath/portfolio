@@ -5,6 +5,8 @@ import React, { useEffect, useRef } from "react";
 import LocaleSwitcher from "./LocaleSwitcher";
 import NavigationLink from "./NavigationLink";
 import gsap from "gsap";
+import Cursor from "./cursor";
+import GlowEffect from "./Glow";
 
 
 
@@ -50,11 +52,14 @@ const Header : React.FC = () => {
                         <NavigationLink 
                         key={item}
                         href={item === 'home' ? '/' : `/${item}`} 
+                        onMouseEnter={() => gsap.to("#cursor" , {scale: 6 , duration: 0.3 , backgroundColor: "#ff0000"})}
+                        onMouseLeave={() => gsap.to("#cursor" , {scale: 0 , duration: 0.3})}
                         >
                            {item}
                         </NavigationLink>
                      ))}
                   </div>
+                  <Cursor />
                </div>
                <div className="fixed bottom-0 right-5">
                   <LocaleSwitcher />
