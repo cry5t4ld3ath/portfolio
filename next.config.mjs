@@ -5,8 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
    output: "export",
-   basePath: "/por",
-   assetPrefix: "/por/"
+   basePath: "/portfolio",
+   assetPrefix: "/portfolio/"
 };
  
 export default withNextIntl(nextConfig);
